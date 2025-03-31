@@ -14,7 +14,6 @@ const Navbar = () => {
         </svg>
         </Link>
 
-
         <ul className='flex flex-row gap-3 text-gray-500 text-lg font-semibold'>
           <Link href={"/"}><li className='p-4 rounded-xl hover:bg-slate-200'>Templates</li></Link>
           <Link href={"/"}><li className='p-4 rounded-xl hover:bg-slate-200'>Marketplace</li></Link>
