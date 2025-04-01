@@ -3,9 +3,10 @@ import React from 'react'
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-const Generate = () => {
 
+function GenerateContent() {
 
   const searchParams = useSearchParams()  
   const [links, setLinks] = useState([{link: "", linktext: ""}])
@@ -61,6 +62,7 @@ const Generate = () => {
       setHandle("")
       setLinks([])
       setPic("")
+      setDesc("")
     }else{
       toast.error(result.message)
       
@@ -111,6 +113,15 @@ const Generate = () => {
       </div>
     </div>
   )
+}
+
+const Generate = () => {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#225ac0] flex justify-center items-center">Loading...</div>}>
+      <GenerateContent />
+    </Suspense>
+  )
+
 }
 
 export default Generate
