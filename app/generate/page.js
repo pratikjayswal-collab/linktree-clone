@@ -32,7 +32,6 @@ function GenerateContent() {
   }
   
 
-
   const submitLinks = async () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
