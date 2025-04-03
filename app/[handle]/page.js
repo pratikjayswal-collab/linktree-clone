@@ -16,11 +16,11 @@ export default async function Page({ params }) {
     return <div className="flex min-h-screen bg-purple-400 justify-center items-start">
         {item && <div className="photo flex flex-col justify-center items-center my-10 gap-4">
             <img className="h-28 w-28 rounded-full" src= {item.pic} alt="" />
-            <span className="font-bold text-xl">@{item.handle}</span>
+            <span className="font-bold text-gray-700 text-xl">@{item.handle}</span>
             <span className="decs w-80 text-center">{item.desc}</span>
             <div className="links">
-                {item.links.map((item, index) => {
-                    return <Link key={index} href = {item.link} > <div className="min-w-96 text-center py-4 shadow-2xl px-2 my-3 bg-purple-100">
+            {item.links.map((item, index) => {
+                    return <Link key={index} href = {item.link} > <div className="min-w-[30vw] text-center py-4 px-2 my-3 bg-purple-100 rounded-2xl hover:bg-purple-200 border-b-[1.1vh] hover:border-b-[0.7vh] border-gray-800 shadow-gray-500 hover:shadow-xl shadow-2xl">
                          {item.linktext} 
                     </div></Link>
             })}

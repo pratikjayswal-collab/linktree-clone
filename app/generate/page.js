@@ -2,13 +2,14 @@
 import React from 'react'
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams , useRouter} from 'next/navigation';
 import { Suspense } from 'react';
 
 
 function GenerateContent() {
 
   const searchParams = useSearchParams()  
+  const router = useRouter()
   const [links, setLinks] = useState([{link: "", linktext: ""}])
   const [handle, setHandle] = useState(searchParams.get('handle') )
   const [pic, setPic] = useState("")
@@ -62,9 +63,9 @@ function GenerateContent() {
       setLinks([])
       setPic("")
       setDesc("")
+      router.push(`/${handle}`)
     }else{
       toast.error(result.message)
-      
     }
 
     
