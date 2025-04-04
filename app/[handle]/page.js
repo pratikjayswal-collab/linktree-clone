@@ -20,7 +20,7 @@ export default async function Page({ params }) {
             <span className="decs w-80 text-center">{item.desc}</span>
             <div className="links">
             {item.links.map((item, index) => {
-                    return <Link key={index} href = {item.link} > <div className="min-w-[30vw] text-center py-4 px-2 my-3 bg-purple-100 rounded-2xl hover:bg-purple-200 border-b-[1.1vh] hover:border-b-[0.7vh] border-gray-800 shadow-gray-500 hover:shadow-xl shadow-2xl">
+                    return <Link target="_blank" rel="noopener noreferrer" key={index} href = {item.link} > <div className="min-w-[60vw] md:min-w-[40vw] text-center py-4 px-2 my-3 bg-purple-100 rounded-2xl hover:bg-purple-200 border-b-[1.1vh] hover:border-b-[0.7vh] border-gray-800 shadow-gray-500 hover:shadow-xl shadow-2xl">
                          {item.linktext} 
                     </div></Link>
             })}
